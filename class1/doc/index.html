@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>第一章</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 1.1 对象
+			// 对象是名/值对的集合，或字符串到映射的集合
+
+			var book = {               // 对象是由花括号括起来的
+				topic: "JavaScript",   // 属性 “topic” 的值是 “JavaScript”
+				fat: true              // 属性 “fat” 的值是true
+			}				           // 右花括号标记了对象的结束
+
+			// 通过“.”或者“[]” 来访问对象属性
+			book.topic                 // => "JavaScript"
+			book["fat"]                // => true:另外一种获取属性的方式
+			book.author = "Flanagan";  // 通过赋值创建一个新属性
+			book.contents = {};
+
+			// 1.2 数组
+			// 数组以索引为列表
+			var primes = [2, 3, 4, 5]; // 拥有4个值的数组，由“[” 和 “]” 划定界限。
+			primes[0].                 // => 2: 数组中第一个元素（索引为0）
+			primes.length              // => 4: 数组中的元素个数
+			primes[primes.length - 1]  // => 5: 数组的最后一个元素
+			 
+		</script>
+	</body>
+</html>
