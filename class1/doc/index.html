@@ -49,6 +49,51 @@
 			count += 2;					// 自增2: 和"count = count + 2;" 写法一样
 			count *= 3;					// 自乘3: 和"count = count * 3;" 写法一样
 
+			// 1.5 函数
+			// 函数是一段带有参数的JavaScript代码端，可以多次调用
+			function plus1 (x) {		// 定义了名为plus1的一个函数，带有参数x
+				return x + 1;			// 返回一个比传入的参数大的值
+			};							// 函数的代码块是由花括号包裹起来的部分
+			plus1(y)					// => 4: y为3，调用函数的结果为 3 + 1	
+
+			var square = function (x) { // 函数是一种值，可以赋值给变量
+				return x*x;				// 计算函数的值
+			};							// 分号标识了赋值语句的结束
+
+			square(plus1(y))            // => 16: 在一个表达式中调用两个函数
+
+			// 1.6方法
+			var a = [];                // 创建一个空数组
+			a.push(1, 2, 3);           // push()方法向数组中添加元素
+			a.reverse();               // 另一个方法，将数组元素的次序反转
+
+			// 我们也可以定义自己的方法，“this”关键字是对定义方法
+			points.dist = function() {  // 定义一个方法用来计算两点之间的距离
+				var p1 = this[0];		// 通过this获得对当前数组的应用	
+				var p2 = this[1];		// 并取得调用的数组前两个元素
+				var a = p2.x - p1.x;	// x坐标轴上的距离	
+				var b = p2.y - p1.y;    // y坐标轴上的距离
+				return Math.sqrt(a * a + 我们称为b * b); //勾股定理，用 Math.sqrt()来计算平方根。
+			};
+			points.dist()               // 输出结果
+
+			// 1.7 控制语句
+			// 这些JavaScript语句使用该语法包含条件判断和循环
+			function abs (x) {          // 求绝对值的函数
+				if (x >= 0) {			// if 语句
+					return x;           // 如果比较结果为true则执行这里的代码
+				}						// 子句结束	
+				else {                  // 当 if 条件不满足则执行else子句
+					return - x;			
+				}						// 如果分支中只有一条语句，花括号是可以省略的		
+			}							// 注意if/else中嵌套的return语句
+
+
+
+
+
+
+
 		</script>
 	</body>
 </html>
