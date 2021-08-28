@@ -5,6 +5,7 @@
 	</head>
 	<body>
 		<script type="text/javascript">
+
 			// 1.1 对象
 			// 对象是名/值对的集合，或字符串到映射的集合
 
@@ -88,9 +89,32 @@
 				}						// 如果分支中只有一条语句，花括号是可以省略的		
 			}							// 注意if/else中嵌套的return语句
 
+			function factoria1 (n) {    // 计算结成的函数
+				var product = 1;
+				while (n > 1) {
+					product *= n;
+					n --;
+				}
+				return product;
+			};
+			factoria1 (4)
 
+			function factoria2 (n) {
+				var i,product = 1;
 
+				for(var i = 2; i <= n; i++ ) {
+					
+					product *= i;
+				};
 
+				return product;
+
+			};
+
+			factoria2 (5)
+
+			//1.8 构造函数
+			function Point () {}
 
 
 
