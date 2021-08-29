@@ -5,7 +5,6 @@
 	</head>
 	<body>
 		<script type="text/javascript">
-
 			// 1.1 对象
 			// 对象是名/值对的集合，或字符串到映射的集合
 
@@ -103,20 +102,27 @@
 				var i,product = 1;
 
 				for(var i = 2; i <= n; i++ ) {
-					
 					product *= i;
 				};
 
 				return product;
-
 			};
-
 			factoria2 (5)
 
 			//1.8 构造函数
-			function Point () {}
 
+			//定义一个构造函数以初始化一个新的Point对象
+			function Point (x, y) {           // 按照惯例，构造函数均以大写字母开始
+				this.x = x;					  // 关键字this指代初始化的实例		
+				this.y = y;					  // 将函数参数存储为对象的属性	
+			};								  // 不需要写return		
+			var p = new Point(1, 1) 
 
+			Point.prototype.r = function () {
+				return Math.sqrt (				
+					this.x * this.x + this.y * this.y);  // this指代调用这个方法的对象
+			};
+			p.r()                                        // => 1,414
 
 		</script>
 	</body>
