@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>第二章</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// 2 
+		var obj = {
+			name: '章三',
+			sub: {
+				name1: 'rose',
+				arr: [1, 3, 5]
+			}
+		};
+
+		
+		function deepClone (origin, target) {
+			var target = target || {},
+				str = Object.prototype.toString,
+				type = '[object Array]';
+
+
+
+				for (var props in origin) {
+					if (origin.hasOwnProperty(props)) {
+						if (origin[props] !== null && typeof origin[props] !== 'object') {
+							console.log('props', props)
+							target[props] = origin[props];
+						} else {
+							console.log('props1', props)
+							if (str.call(origin[props]) === type) {
+								target[props] = [];
+							} else {
+								target[props] = {};
+							};
+
+							deepClone(origin[props], target[props])
+						}
+					}
+				}
+
+			return target;
+		};
+
+
+		var deepDone = deepClone(obj);
+		deepDone.sub.name = '1234'
+		console.log(deepDone, obj) 
+
+		
+	</script>
+</body>
+</html>
